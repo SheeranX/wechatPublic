@@ -1,0 +1,154 @@
+@font-size-base:2;
+@font28:0.28rem;
+@font24:0.24rem;
+@font32:0.32rem;
+@info-color:#1e84d1;
+@btn-color:#4497df;
+@warning-color:#ff5500;
+@bg-color:#f8f8f8;
+@wire-color:#c7c7c7;
+@choose-color:#999;
+@num-color:#666;
+@regular-color:#3e3e3e;
+@heightlight-color:#000;
+@white-color:#fff;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  background: @bg-color;
+}
+
+a{
+  text-decoration: none;
+  color: #3e3e3e;
+}
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.flex-column{
+  display: flex;  
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.container{
+  box-sizing: border-box;
+}
+
+.bg-color{
+  background: @bg-color;
+}
+.info-color{
+  color: @info-color;
+}
+.num-color{
+  color: @num-color;
+}
+.white-bg{
+  background: @white-color;
+}
+.white-color{
+  color: @white-color;
+}
+.regular{
+  color: @regular-color;
+}
+.height-light{
+  color: @heightlight-color;
+}
+.warning{
+  color: @warning-color;
+}
+.choose-color{
+  color:@choose-color;
+}
+
+.arrow{
+  width: 0.5rem;
+  height: 0.5rem;
+  background: url(../images/right-arrow.png);
+  background-size: 0.5rem auto;
+  background-position-y:-0.05rem;
+  display: inline-block;
+}
+ .arrow-down::before{
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url(../images/right-arrow.png);
+    background-size: 0.5rem auto;
+    background-position-y:-0.05rem;
+    display: block;
+    position: absolute;
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); /* Internet Explorer */
+    -moz-transform:rotate(90deg); /* Firefox */
+    -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+    left:30%;
+    margin-top: 0.15rem;
+}
+
+.btm-wired{
+  border-bottom: 1px solid @wire-color;
+}
+.btm-dashed{
+  border-bottom: 1px dashed @wire-color;
+}
+
+.spacing-padding-between{
+  padding: 0rem 0.3rem;
+}
+.spacing-margin-updown{
+  margin:0.2rem 0rem; 
+}
+.spacing-margin-top{
+  margin-top: 0.4rem;
+}
+.spacing-padding-top{
+  padding-top: 0.4rem;
+}
+.spacing-padding-btm{
+  padding-bottom: 0.4rem;
+}
+
+.bold{
+  font-weight: bold;
+}
+.font24{
+  font-size: @font24;
+}
+.font28{
+  font-size: @font28;
+}
+.font32{
+  font-size: @font32;
+}
+
+.btn{
+  height: 0.8rem;
+  width: 6.7rem;
+  border: none;
+  border-radius: 0.4rem;
+  background:linear-gradient(#0d7cce,#4497df);
+  outline: none;
+}
+
+.txt-align-left{
+  text-align: left;
+}
+.txt-align-center{
+  text-align: center;
+}
+
+.title{
+  display: inline-block;
+  width: 1.6rem;
+}
