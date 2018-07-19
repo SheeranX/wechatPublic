@@ -3,8 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import './components/toast/toast.css';
+import Toast from './components/toast/toast.js';
+import axios from 'axios';
+
+import config from './assets/scripts/config.js';
+
+Vue.use(Toast);
 
 Vue.config.productionTip = false
+Vue.prototype.$http = axios;
 
 /* eslint-disable no-new */
 new Vue({

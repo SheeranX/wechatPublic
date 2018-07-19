@@ -1,0 +1,103 @@
+<template>
+    <div class="modal" v-if="isdepartureHide">
+        <div class="modal-panel white-bg spacing-padding-between">
+            <div class="modal-title flex-row btm-wired">
+                <div>{{title}}</div>
+                <div class="warning" @click="close()">取消</div>
+            </div>
+            <div class="modal-content flex-column num-color">
+                <div class="modal-content-item" v-for="(item,index) in items" :key="item.dgCode" @click="check(item,index)" :class="index==idx?'info-color':''">{{item.text}}</div>
+            </div>
+        </div>
+        <div class="modal-bg" @click="close()"></div>
+    </div>
+</template>
+<script>
+    export default({
+        name:'departure',
+        data:function(){
+            return{
+                idx:null,
+                animation:"",
+                selectItem:{},
+                isdepartureHide:this.isdepartureShow
+            }
+        },
+        methods:{
+            close(){
+                this.isdepartureHide = false;
+            },
+            check(item,index){
+                var self = this;
+                self.selectItem =item;
+                self.idx = index;
+                self.animation = 'modal-animation-out';
+
+                self.$emit('sendDepartureID',self.selectItem);
+                self.isdepartureHide = false;
+            }
+        },
+        props:['items','isdepartureShow','title'],
+        watch:{
+            isdepartureShow(val){
+                this.isdepartureHide = val;
+            },
+            isdepartureHide(val){
+                this.$emit('on-departure-change',val);
+            }
+        }
+    });
+</script>
+<style lang="less" scoped>
+@import '../assets/style/index.less';
+
+@keyframes modalIn
+{
+    from { transform: translateY(150%);}
+    to {transform: translateY(0%);}
+}
+
+@keyframes modalOut {
+     from { transform: translateY(0%);}
+    to {transform: translateY(150%);}
+}
+.modal-title{
+    justify-content: space-between;
+    height: 0.8rem;
+    align-items: center;
+}
+.modal-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+}
+
+.modal-panel{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    right: 0;
+    left: 0;
+    box-sizing: border-box;
+    bottom: 0;
+}
+.modal-content{
+    max-height: 6rem;
+    overflow-y: scroll;   
+    transition: all ease-in 1s;
+}
+.modal-content-item{
+    height: 0.8rem;
+    line-height: 0.8rem;
+    border-bottom: 1px solid @wire-color;
+    &:last-child{
+        border-bottom: none;
+    }
+}
+
+</style>

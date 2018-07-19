@@ -29,12 +29,14 @@
     bottom: 0;
     box-shadow: 0px -3px 3px rgba(0, 0, 0, 0.05);
     width: 100%;
+    z-index: 999;
 }
 .nav-icon{
     display: block;
     width: 0.5rem;
     height: 0.5rem;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 .nav-item{
     width: 3.75rem;

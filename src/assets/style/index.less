@@ -19,6 +19,16 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+input{
+  border-radius:0;
+  box-shadow: none;
+}
+
+button{
+  -webkit-appearance:none;
 }
 
 body{
@@ -46,11 +56,11 @@ a{
 .bg-color{
   background: @bg-color;
 }
-.info-color{
-  color: @info-color;
-}
 .num-color{
   color: @num-color;
+}
+.info-color{
+  color: @info-color;
 }
 .white-bg{
   background: @white-color;
@@ -79,6 +89,7 @@ a{
   background-position-y:-0.05rem;
   display: inline-block;
 }
+
  .arrow-down::before{
     content: '';
     width: 0.5rem;
@@ -94,6 +105,26 @@ a{
     -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
     left:30%;
     margin-top: 0.15rem;
+    z-index: 10;
+}
+
+
+.arrow-up::before{
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  background: url(../images/right-arrow.png);
+  background-size: 0.5rem auto;
+  background-position-y:-0.05rem;
+  display: block;
+  position: absolute;
+  transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg); /* Internet Explorer */
+  -moz-transform:rotate(-90deg); /* Firefox */
+  -webkit-transform:rotate(-90deg); /* Safari 和 Chrome */
+  left:31%;
+  margin-top: 0.15rem;
+  translate:all 1s;
 }
 
 .btm-wired{
